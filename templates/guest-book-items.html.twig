@@ -1,0 +1,36 @@
+{% for item in items %}
+  <div class="guest-book-item">
+    <div class="main-wrapper">
+      <div class="avatar-wrapper" data-itemId="{{ item.id }}">
+        <a class="avatar_link" href ="{{ item.avatar }} data-itemId="{{ item.id }}"">
+          <img src="{{ item.avatar }}" alt="avatar">
+        </a>
+      </div>
+      <div class="information-wrapper">
+        <div class="your-name" data-itemId="{{ item.id }}">{{ item.name }}</div>
+        <div class="date">{{ item.date }}</div>
+      </div>
+    </div>
+    <div class="contents-wrapper">
+      <div class="photo_wrapper">
+        <a class="photo_link" href ="{{ item.photo }}">
+          <img src="{{ item.photo }}" alt="image from message">
+        </a>
+      </div>
+      <div class="message" data-itemId="{{ item.id }}">{{ item.message }}</div>
+    </div>
+    <div class="contact-wrapper">
+      <div class="your_email" data-itemId="{{ item.id }}">{% trans %}Email:{% endtrans %}
+        <a href="mailto:{{ item.email }}" class="your-email-link" data-itemId="{{ item.id }}">{{ item.email }}</a>
+      </div>
+    <div class="your-mobile-number" data-itemId="{{ item.id }}">{% trans %}Mobile number: &nbsp {% endtrans %}<span class="mobile-number" data-itemId="{{ item.id }}">{{ item.mobile }}</span></div>
+    </div>
+    {% if user.hasPermission('delete and edit guest book fields') %}
+      <div class="cat-settings">
+        <button class="guest-edit" data-itemId="{{ item.id }}">Edit</button>
+        <button class="guest-delete" data-itemId="{{ item.id }}">Delete</button>
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}
+{{ attach_library('guest_book/global') }}
