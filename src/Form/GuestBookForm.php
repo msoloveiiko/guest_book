@@ -62,7 +62,7 @@ class GuestBookForm extends FormBase {
     ];
     $form['review'] = [
       '#type' => 'textarea',
-      '#placeholder' => ['Message'],
+      '#placeholder' => ['Message(required)'],
       '#required' => TRUE,
     ];
     $form['avatar'] = [

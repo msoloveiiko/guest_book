@@ -81,7 +81,7 @@ class EditGuestForm extends FormBase {
       ],
     ];
     $form['edit-message'] = [
-      '#type' => 'textfield',
+      '#type' => 'textarea',
       '#title' => $this->t('Change message:'),
       '#attributes' => [
         'class' => [

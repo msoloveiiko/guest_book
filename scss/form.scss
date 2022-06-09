@@ -1,11 +1,10 @@
 @import "_variables.scss";
-.guest-book-form{
+.guest-book-form {
   padding-bottom: 80px;
   margin: 0 auto;
-  width: 415px;
+  width: 430px;
+  position: relative;
   .button {
-    position: relative;
-    top: 70px;
     margin: 0 50%;
     padding: 4px 8px;
     background-color: $lightviolet;
@@ -14,6 +13,7 @@
     font-size: 16px;
     border: 1px solid $darkviolet;
     border-radius: 13px;
+
     &:hover {
       background-color: $violet;
       background-image: none;
@@ -21,12 +21,14 @@
       font-size: 16px;
       border: 1px solid $darkviolet;
     }
+
     &:active {
       background-color: $violet;
       background-image: none;
       color: white;
       border: 1px solid $darkviolet;
     }
+
     &:focus {
       background-color: $violet;
       background-image: none;
@@ -34,10 +36,10 @@
       border: 1px solid $darkviolet;
     }
   }
-  .ajax-progress {
-    position: absolute;
-    bottom: -9px;
-  }
+//  .ajax-progress {
+//    position: absolute;
+//    bottom: -9px;
+//  }
 }
 .form-item-name {
   display: flex;
@@ -89,8 +91,8 @@
   }
 }
 .form-item-avatar {
-  top: 30px;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   label {
     margin: auto 0;
@@ -99,8 +101,7 @@
     margin-left: 40px;
   }
   .description {
-    position: absolute;
-    top: -25px;
+    margin-top: 3px;
     margin-left: 87px;
   }
   [data-drupal-selector="edit-avatar-remove-button"] {
@@ -114,6 +115,10 @@
       flex-wrap: wrap;
     }
   }
+  .file--image {
+    margin-left: 40px;
+    padding-left: 20px;
+  }
   .button {
     margin: 0;
     padding: 2px 7px;
@@ -131,14 +136,10 @@
       border: 1px solid $darkviolet;
     }
   }
-  .file--image {
-    margin-left: 40px;
-    padding-left: 20px;
-  }
 }
 .form-item-picture {
-  top: 60px;
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   label {
     margin: auto 0;
@@ -147,8 +148,7 @@
     margin-left: 37px;
   }
   .description {
-    position: absolute;
-    top: -25px;
+    margin-top: 3px;
     margin-left: 87px;
   }
   [data-drupal-selector="edit-picture-remove-button"] {
@@ -162,6 +162,10 @@
       flex-wrap: wrap;
     }
   }
+  .file--image {
+    margin-left: 36px;
+    padding-left: 20px;
+  }
   .button {
     margin: 0;
     padding: 2px 7px;
@@ -179,8 +183,7 @@
       border: 1px solid $darkviolet;
     }
   }
-  .file--image {
-    margin-left: 36px;
-    padding-left: 20px;
-  }
+
 }
+
+

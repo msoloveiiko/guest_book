@@ -18,6 +18,9 @@
     height: 100%;
     width: 100%;
     border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
     img {
       height: 100%;
       width: 100%;
