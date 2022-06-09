@@ -99,47 +99,22 @@ class GuestBookForm extends FormBase {
   }
 
   /**
-   * S
-   * {@inheritdoc}
+   * Ajax callback for submit form.
    *
-   * @throws \Exception
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   *   JSON response object for AJAX requests.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
-    if (!$form_state->getValue('name')
-          || empty($form_state->getValue('name'))
-        ) {
-      $response->addCommand(new MessageCommand($this->t('Enter name.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (strlen($form_state->getValue('name')) < 2) {
-      $response->addCommand(new MessageCommand($this->t('Name is too short.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (strlen($form_state->getValue('name')) > 100) {
-      $response->addCommand(new MessageCommand($this->t('Name is too long.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (!$form_state->getValue('email')
-          || empty($form_state->getValue('email'))
-        ) {
-      $response->addCommand(new MessageCommand($this->t('Enter email.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (!preg_match('/^[a-z_-]+@[a-z0-9.-]+\.[a-z]{2,4}$/', $form_state->getValue('email'))) {
-      $response->addCommand(new MessageCommand($this->t('Email not valid.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (!$form_state->getValue('mobile_number')
-          || empty($form_state->getValue('mobile_number'))
-        ) {
-      $response->addCommand(new MessageCommand($this->t('Enter mobile number.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (strlen($form_state->getValue('mobile_number')) < 10 || strlen($form_state->getValue('mobile_number')) > 10) {
-      $response->addCommand(new MessageCommand($this->t('The mobile phone must contain 10-14 digits.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (!preg_match('/^[0-9]{10}$/', $form_state->getValue('mobile_number'))) {
-      $response->addCommand(new MessageCommand($this->t('Mobile number not valid.'), '#form-valid-message', ['type' => 'error']));
-    }
-    elseif (!$form_state->getValue('review')
-          || empty($form_state->getValue('review'))
-        ) {
-      $response->addCommand(new MessageCommand($this->t('Enter message.'), '#form-valid-message', ['type' => 'error']));
+    if ($form_state->hasAnyErrors()) {
+      $response->addCommand(new MessageCommand($this->t("Fill in the required fields with valid values."), "#form-valid-message", ["type" => "error"]));
     }
     elseif ($form_state->getValue('avatar') == NULL && $form_state->getValue('picture') == NULL) {
       $conn = Database::getConnection();
@@ -229,7 +204,41 @@ class GuestBookForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-
+    if (!$form_state->getValue('name')
+      || empty($form_state->getValue('name'))
+    ) {
+      $form_state->setErrorByName('name', $this->t('Enter name.'));
+    }
+    elseif (strlen($form_state->getValue('name')) < 2) {
+      $form_state->setErrorByName('name', $this->t('Name is too short.'));
+    }
+    elseif (strlen($form_state->getValue('name')) > 100) {
+      $form_state->setErrorByName('name', $this->t('Name is too long.'));
+    }
+    elseif (!$form_state->getValue('email')
+      || empty($form_state->getValue('email'))
+    ) {
+      $form_state->setErrorByName('email', $this->t('Enter email.'));
+    }
+    elseif (!preg_match('/^[a-z_-]+@[a-z0-9.-]+\.[a-z]{2,4}$/', $form_state->getValue('email'))) {
+      $form_state->setErrorByName('email', $this->t('Email not valid.'));
+    }
+    elseif (!$form_state->getValue('mobile_number')
+      || empty($form_state->getValue('mobile_number'))
+    ) {
+      $form_state->setErrorByName('email', $this->t('Enter mobile number.'));
+    }
+    elseif (strlen($form_state->getValue('mobile_number')) < 10 || strlen($form_state->getValue('mobile_number')) > 10) {
+      $form_state->setErrorByName('email', $this->t('The mobile phone must contain 10-14 digits.'));
+    }
+    elseif (!preg_match('/^[0-9]{10}$/', $form_state->getValue('mobile_number'))) {
+      $form_state->setErrorByName('email', $this->t('Mobile number not valid.'));
+    }
+    elseif (!$form_state->getValue('review')
+      || empty($form_state->getValue('review'))
+    ) {
+      $form_state->setErrorByName('email', $this->t('Enter message.'));
+    }
   }
 
   /**
