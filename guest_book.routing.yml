@@ -1,0 +1,7 @@
+guest_book.show_data:
+  path: '/guest_book'
+  defaults:
+    _controller:  '\Drupal\guest_book\Controller\GuestBookController::content'
+    _title: 'Hello! You can leave reviews, comments, impressions and wishes here.'
+  requirements:
+    _permission: 'access content'

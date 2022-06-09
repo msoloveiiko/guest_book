@@ -1,0 +1,3 @@
+delete and edit guest book fields:
+  title: 'Delete and edit guest book fields'
+  restrict access: true

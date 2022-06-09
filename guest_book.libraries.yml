@@ -1,0 +1,14 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      css/fonts.css: { }
+      css/elements.css: { }
+    component:
+      css/form.css: { }
+      css/guest_book_items.css: { }
+      css/deleteform.css: { }
+      css/editform.css: { }
+  js:
+    js/deleteform.js: { }
+    js/editform.js: { }

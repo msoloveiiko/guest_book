@@ -1,0 +1,41 @@
+@import "_variables.scss";
+.form-delete {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: calc(50% - 80px);
+  left: calc(50% - 250px);
+  padding: 30px;
+  border: 1px solid $lightviolet;
+  box-shadow: 0px 0px 27px -6px $lightviolet;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: 0.1s all ease;
+  max-width: 500px;
+  z-index: 50;
+  [data-drupal-selector="edit-title"] {
+    margin: 30px 0;
+    font-size: 26px;
+  }
+  .button {
+    border: 1px solid $lightviolet;
+    border-radius: 2px;
+    background-color: $lightviolet;
+    font-weight: 500;
+    color: aliceblue;
+    padding: 6px 13px;
+    font-size: 15px;
+    margin: 0 8px;
+    background-image: none;
+    &:hover{
+      transition: all ease-in-out 0.3s;
+      background-color: black;
+    }
+  }
+}
+.modalDelete_active{
+  visibility: visible;
+  opacity: 1;
+}

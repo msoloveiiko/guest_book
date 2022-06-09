@@ -1,0 +1,21 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function guest_book_theme() {
+  return [
+    'guest_book_template' => [
+      'variables' => [
+        'form' => NULL,
+        'guest_book' => NULL,
+        'DeleteGuestForm' => NULL,
+        'EditGuestForm' => NULL,
+      ],
+    ],
+    'guest-book-items' => [
+      'variables' => [
+        'items' => NULL,
+      ],
+    ],
+  ];
+}

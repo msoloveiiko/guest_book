@@ -1,0 +1,33 @@
+@import "_variables.scss";
+.guest-form-edit {
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+  height: auto;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  padding: 25px 25px 80px;
+  border: 1px solid $violet;
+  box-shadow: 0px 0px 27px -6px $violet;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: 0.1s all ease;
+  max-width: 400px;
+  z-index: 50;
+  text-align: center;
+  .form-submit-edit{
+    position: absolute;
+    bottom: 20px;
+    left: 27%;
+  }
+  .form-cancel-edit{
+    position: absolute;
+    bottom: 20px;
+    right: 27%;
+  }
+}
+.modalEdit_active{
+  visibility: visible;
+  opacity: 1;
+}

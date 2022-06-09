@@ -1,0 +1,6 @@
+name: Guest book
+path: '/guest_book'
+description: This module serves as a guest book, where people can go and leave feedback, comments, impressions and wishes.
+core_version_requirement: 9.x
+package: Custom
+type: module

@@ -1,0 +1,90 @@
+@import "_variables.scss";
+.guest-book-items {
+  width: 75%;
+  margin: 50px auto;
+}
+.guest-book-item {
+  margin: 30px 5px;
+}
+.avatar-wrapper {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  a {
+    height: 100%;
+    width: 100%;
+    border-bottom: none;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.main-wrapper {
+  display: flex;
+  position: relative;
+  padding: 10px;
+  border: 2px solid $violet;
+  border-bottom: none;
+}
+.information-wrapper {
+  padding-left: 15px;
+  margin: auto 0;
+}
+.contents-wrapper {
+  display: flex;
+  padding: 10px;
+  border: 2px solid $violet;
+  .message {
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.photo_wrapper {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 55px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    height: 100%;
+    width: 100%;
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.contact-wrapper {
+  border: 2px solid $violet;
+  border-top: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 10px;
+  .name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .your_email {
+    font-size: 14px;
+    a {
+      font-size: 14px;
+      text-decoration: none;
+      color: $darkviolet;
+      border-bottom: none;
+    }
+  }
+}

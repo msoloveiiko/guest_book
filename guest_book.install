@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CssCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_schema().
+ */
+function guest_book_schema() {
+  $schema['guest_book'] = [
+    'description' => 'Custom guest_book table.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'description' => 'Name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'description' => 'Email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'mobile' => [
+        'description' => 'Number',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'message' => [
+        'description' => 'Message',
+        'type' => 'varchar',
+        'length' => 1000,
+        'not null' => TRUE,
+      ],
+      'avatar' => [
+        'description' => 'Avatar',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'photo' => [
+        'description' => 'Picture',
+        'type' => 'varchar',
+        'length' => 255,
+      ],
+      'date' => [
+        'description' => 'Date field',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}
