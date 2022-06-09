@@ -2,10 +2,16 @@
 
 namespace Drupal\guest_book\Controller;
 
+/**
+ * @file
+ * Contains \Drupal\guest_book\Controller\GuestBookController.
+ *
+ * @return
+ */
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Controller for GuestBookForm.
+ * Provides route responses for the guestbook module.
  */
 class GuestBookController extends ControllerBase {
 
