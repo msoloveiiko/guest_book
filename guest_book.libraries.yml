@@ -2,7 +2,6 @@ global:
   version: VERSION
   css:
     theme:
-      css/fonts.css: { }
       css/elements.css: { }
     component:
       css/form.css: { }

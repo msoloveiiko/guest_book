@@ -50,8 +50,8 @@
   }
 }
 .photo_wrapper {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 200px;
+  max-height: 200px;
   min-width: 55px;
   overflow: hidden;
   display: flex;
@@ -89,5 +89,39 @@
       color: $darkviolet;
       border-bottom: none;
     }
+  }
+}
+.guest-edit {
+  margin: 5px 5px 0 0;
+  padding: 4px 8px;
+  background-color: $lightviolet;
+  background-image: none;
+  color: white;
+  font-size: 16px;
+  border: 1px solid $darkviolet;
+  border-radius: 3px;
+  &:hover {
+    background-color: $violet;
+    background-image: none;
+    color: white;
+    font-size: 16px;
+    border: 1px solid $darkviolet;
+  }
+}
+.guest-delete {
+  margin: 5px 5px 0 0;
+  padding: 4px 8px;
+  background-color: $lightviolet;
+  background-image: none;
+  color: white;
+  font-size: 16px;
+  border: 1px solid $darkviolet;
+  border-radius: 3px;
+  &:hover {
+    background-color: $violet;
+    background-image: none;
+    color: white;
+    font-size: 16px;
+    border: 1px solid $darkviolet;
   }
 }

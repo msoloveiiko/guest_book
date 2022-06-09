@@ -9,7 +9,7 @@
   left: calc(50% - 250px);
   padding: 30px;
   border: 1px solid $lightviolet;
-  box-shadow: 0px 0px 27px -6px $lightviolet;
+  box-shadow: 0px 0px 27px -6px $darkviolet;
   border-radius: 4px;
   background-color: #ffffff;
   transition: 0.1s all ease;
@@ -17,7 +17,7 @@
   z-index: 50;
   [data-drupal-selector="edit-title"] {
     margin: 30px 0;
-    font-size: 26px;
+    font-size: 30px;
   }
   .button {
     border: 1px solid $lightviolet;
@@ -26,12 +26,15 @@
     font-weight: 500;
     color: aliceblue;
     padding: 6px 13px;
-    font-size: 15px;
+    font-size: 18px;
     margin: 0 8px;
     background-image: none;
     &:hover{
       transition: all ease-in-out 0.3s;
-      background-color: black;
+      background-color: $violet;
+      background-image: none;
+      color: white;
+      border: 1px solid $darkviolet;
     }
   }
 }

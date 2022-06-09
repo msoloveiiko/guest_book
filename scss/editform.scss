@@ -7,27 +7,79 @@
   height: auto;
   top: calc(50% - 250px);
   left: calc(50% - 250px);
-  padding: 25px 25px 80px;
-  border: 1px solid $violet;
-  box-shadow: 0px 0px 27px -6px $violet;
+  padding: 25px;
+  border: 1px solid $lightviolet;
+  box-shadow: 0px 0px 27px -6px $darkviolet;
   border-radius: 4px;
   background-color: #ffffff;
   transition: 0.1s all ease;
   max-width: 400px;
   z-index: 50;
   text-align: center;
-  .form-submit-edit{
-    position: absolute;
-    bottom: 20px;
-    left: 27%;
-  }
-  .form-cancel-edit{
-    position: absolute;
-    bottom: 20px;
-    right: 27%;
+  .button {
+    border: 1px solid $lightviolet;
+    border-radius: 2px;
+    background-color: $lightviolet;
+    color: aliceblue;
+    padding: 3px 12px;
+    font-size: 18px;
+    margin: 10px 8px 0;
+    background-image: none;
+    &:hover{
+      transition: all ease-in-out 0.3s;
+      background-color: $violet;
+      background-image: none;
+      color: white;
+      border: 1px solid $darkviolet;
+    }
   }
 }
 .modalEdit_active{
   visibility: visible;
   opacity: 1;
+}
+.form-text {
+  padding: 5px;
+}
+.message-form-edit {
+  display: flex;
+  resize: none;
+  height: 70px;
+  padding: 5px;
+}
+.form-item-edit-image {
+  [data-drupal-selector="edit-edit-image-remove-button"] {
+    margin: 0 5px 0 20px;
+    padding: 2px 7px;
+    background-color: #885fb1;
+    background-image: none;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #651791;
+    border-radius: 13px;
+    &:hover {
+      background-color: $violet;
+      background-image: none;
+      color: white;
+      border: 1px solid $darkviolet;
+    }
+  }
+}
+.form-item-edit-avatar {
+  [data-drupal-selector="edit-edit-avatar-remove-button"] {
+    margin: 0 5px 0 20px;
+    padding: 2px 7px;
+    background-color: #885fb1;
+    background-image: none;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #651791;
+    border-radius: 13px;
+    &:hover {
+      background-color: $violet;
+      background-image: none;
+      color: white;
+      border: 1px solid $darkviolet;
+    }
+  }
 }
